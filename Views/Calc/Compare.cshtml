@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Square Roots Comparison Tool";
+}
+<h1>@ViewData["Title"]</h1>
+
+<h5>Compare The Square Roots of 2 Given Numbers</h5>
+
+@{
+    if(ViewBag.Result != null)
+    {
+        <div>
+            <p><strong>Result:</strong><br> @ViewBag.Result </p> 
+        </div>
+    }
+}
+
+    <div class="container">
+        <form asp-controller="Calc" asp-action="Compare" method="POST">
+            <input type="number" name="firstNumber" placeholder="First Number">
+            <input type="number" name="secondNumber" placeholder="Second Number">
+            <button type="submit" class="" >Submit</button>
+        </form>
+    </div>
